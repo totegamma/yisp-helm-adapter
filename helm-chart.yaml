@@ -1,0 +1,27 @@
+!yisp &helm-chart-props
+- schema
+- type: object
+  properties:
+    repo:
+      type: string
+    release:
+      type: string
+    version:
+      type: string
+    values:
+      type: any
+
+---
+!yisp &helm-chart
+- lambda
+- [!helm-chart-props props]
+- - go-run
+  - pkg: github.com/totegamma/yisp-helm-adapter@v0.1.0
+    args:
+      - *props.repo
+      - *props.release
+      - *props.version
+    stdin:
+      - to-yaml
+      - *props.values
+
