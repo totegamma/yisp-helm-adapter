@@ -1,15 +1,14 @@
 # yisp-helm-adapter
 
-
 ## example
 ```yaml
 !yisp
 - import
-- ["x", "https://raw.githubusercontent.com/totegamma/yisp-helm-adapter/refs/heads/main/helm-chart.yaml"]
+- ["helmchart", "https://raw.githubusercontent.com/totegamma/yisp-helm-adapter/refs/heads/main/helm-chart.yaml"]
 
 ---
 !yisp
-- *x.helm-chart
+- *helmchart.template
 - repo: "https://charts.concrnt.net/"
   release: "concrnt"
   version: "0.7.13"

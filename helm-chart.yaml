@@ -1,4 +1,4 @@
-!yisp &helm-chart-props
+!yisp &template-props
 - schema
 - type: object
   properties:
@@ -12,13 +12,12 @@
       type: any
 
 ---
-!yisp &helm-chart
+!yisp &template
 - lambda
-- [!helm-chart-props props]
+- [!template-props props]
 - - go-run
-  - !quote
-    pkg: github.com/totegamma/yisp-helm-adapter@v0.1.0
-    args:
+  - pkg: github.com/totegamma/yisp-helm-adapter@v0.1.0
+    args: !quote
       - *props.repo
       - *props.release
       - *props.version
