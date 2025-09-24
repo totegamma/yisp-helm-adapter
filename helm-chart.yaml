@@ -15,13 +15,13 @@
 !yisp &template
 - lambda
 - [!template-props props]
-- - go-run
+- - exec.go
   - pkg: github.com/totegamma/yisp-helm-adapter@v0.1.0
     args: !quote
       - *props.repo
       - *props.release
       - *props.version
     stdin:
-      - to-yaml
+      - yaml.marshal
       - *props.values
 
