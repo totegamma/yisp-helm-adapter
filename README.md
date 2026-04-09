@@ -4,7 +4,7 @@
 ```yaml
 !yisp
 - import
-- ["helmchart", "https://raw.githubusercontent.com/totegamma/yisp-helm-adapter/refs/heads/main/helm-chart.yaml"]
+- ["helmchart", "https://raw.githubusercontent.com/totegamma/yisp-helm-adapter/refs/heads/main/helm-chart.yisp"]
 
 ---
 !yisp
